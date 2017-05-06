@@ -10,7 +10,6 @@ SECRET_KEY = 'va0h15b!*f2(fb5018053p*mu%5j_gh^5p@!kj1frdna02k3mm'
 
 DEBUG = False
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -99,7 +98,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 
 STATIC_URL = '/static/'
