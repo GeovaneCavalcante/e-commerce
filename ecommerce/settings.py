@@ -8,9 +8,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = 'va0h15b!*f2(fb5018053p*mu%5j_gh^5p@!kj1frdna02k3mm'
 
-DEBUG = True
-
-
+DEBUG = False
 
 
 INSTALLED_APPS = [
@@ -22,10 +20,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #apps
     'core',
-    'catalog.apps.CatalogConfig',
+    'catalog',
     #libs
     'widget_tweaks'
 ]
+
+ALLOWED_HOSTS = []
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -35,6 +35,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'ecommerce.urls'
@@ -111,3 +112,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
