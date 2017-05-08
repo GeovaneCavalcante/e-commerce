@@ -10,6 +10,9 @@ SECRET_KEY = 'va0h15b!*f2(fb5018053p*mu%5j_gh^5p@!kj1frdna02k3mm'
 
 DEBUG = False
 
+
+ALLOWED_HOSTS = []
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -24,7 +27,6 @@ INSTALLED_APPS = [
     'widget_tweaks'
 ]
 
-ALLOWED_HOSTS = []
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
