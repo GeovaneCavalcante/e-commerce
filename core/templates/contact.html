@@ -6,6 +6,15 @@
 {% block conteiner %}
 <div class="page-header">
     <h1>Fale conosco</h1>
+    {% if success %}
+        <div class="alert alert-success">
+            Menssagem envida
+        </div>
+    {% else %}
+        <div class="alert alert-error">
+            erro
+        </div>
+    {% endif %}
     <form class="form-horizontal" action="" method="post">
     {% csrf_token %}
         <fieldset>

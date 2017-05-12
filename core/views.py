@@ -1,20 +1,24 @@
 from django.shortcuts import render
 from .forms import ContactForm
+from django.views.generic import TemplateView
 
 
-def index(request):
-    return render(request, 'index.html')
+class IndexView(TemplateView):
+
+    template_name = 'index.html'
 
 
 def contact(request):
 
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-    else:
-        form = ContactForm(request.POST)
+    success = False
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        form.send_mail()
+        success = True
 
     context = {
-        'form': form
+        'form': form,
+        'success': success,
     }
     return render(request, 'contact.html', context)
 

@@ -7,6 +7,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 SECRET_KEY = 'va0h15b!*f2(fb5018053p*mu%5j_gh^5p@!kj1frdna02k3mm'
+SECRET_KEY = os.getenv('SECRET_KEY', '123')
 
 DEBUG = False
 
@@ -106,6 +107,18 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+#envio de email
+
+EMAIL_HOST = ''
+
+EMAIL_HOST_USER = ''
+
+EMAIL_HOST_PASSWORD = ''
+
+DEFAULT_FROM_EMAIL = 'django@django.com'
+
+
 
 
 try:
