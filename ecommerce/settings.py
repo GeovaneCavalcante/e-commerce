@@ -5,8 +5,6 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-
-SECRET_KEY = 'va0h15b!*f2(fb5018053p*mu%5j_gh^5p@!kj1frdna02k3mm'
 SECRET_KEY = os.getenv('SECRET_KEY', '123')
 
 DEBUG = False
