@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     #apps
     'core',
     'catalog',
+    'accounts',
     #libs
     'widget_tweaks'
 ]
@@ -118,6 +119,16 @@ DEFAULT_FROM_EMAIL = 'django@django.com'
 
 
 
+
+#Custom User
+
+AUTH_USER_MODEL = 'accounts.User'
+
+
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL = 'IMDEX'
 
 try:
     from .local_settings import *
